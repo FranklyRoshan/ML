@@ -1,0 +1,34 @@
+## Feature Scaling Overview
+
+* Feature scaling prevents features with large values from dominating machine learning models.
+* It ensures faster convergence in gradient descent and improves distance-based algorithms.
+* The two primary techniques are normalization and standardization.
+
+## Normalization (Min-Max Scaling)
+
+* Definition: Rescales data features into a fixed range, usually between 0 and 1.
+* Formula: X_new = (X - X_min) / (X_max - X_min)
+* Best Use Cases: Bounded data (like image pixel values) and algorithms that do not assume distribution shapes.
+* Top Algorithms: K-Nearest Neighbors, Neural Networks.
+* Main Drawback: Highly sensitive to outliers, which compress normal data points.
+
+## Standardization (Z-Score Normalization)
+
+* Definition: Centers data around a mean of 0 with a standard deviation of 1.
+* Formula: X_new = (X - Mean) / Standard_Deviation
+* Best Use Cases: Data that follows a Gaussian or bell-curve distribution.
+* Top Algorithms: Linear Regression, Logistic Regression, Support Vector Machines, Principal Component Analysis.
+* Main Advantage: Handles outliers much better than normalization.
+
+## Direct Comparison
+
+* Range: Normalization strictly bounds data (0 to 1). Standardization leaves values unbounded.
+* Outlier Impact: Normalization breaks with outliers. Standardization tolerates outliers well.
+* Data Distribution: Normalization alters the variance shape. Standardization preserves the original shape.
+
+## Quick Selection Rule
+
+* Choose normalization if you need a specific bounded range and have no outliers.
+* Choose standardization if your algorithm assumes a normal distribution or data has outliers.
+
+## Tip: Always go with "Standardization" (StandardScaler)
