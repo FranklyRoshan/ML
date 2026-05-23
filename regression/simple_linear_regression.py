@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
-# =============================================== DATA PREPROCESSING ===============================================
+# ================================================ DATA PREPROCESSING ==================================================
 # Importing the dataset (df - DataFrame)
 df = pd.read_csv('Salary-Data.csv')
 #  slice operator [start:stop:step]
@@ -14,7 +14,7 @@ y = df.iloc[:,-1].values # Dependent variable vector
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
 
-# =============================================== REGRESSION ===============================================
+# ============================================= SIMPLE LINEAR REGRESSION ===============================================
 # Training the Simple Learn Regression model on the  Training set
 from sklearn.linear_model import LinearRegression
 regressor = LinearRegression()
@@ -39,7 +39,7 @@ plt.xlabel('Years of Experience')
 plt.ylabel('Salary')
 plt.show()
 
-# =============================================== FAQs ===============================================
+# ======================================================== FAQs ========================================================
 
 # Question 1: How do I use my simple linear regression model to make a single prediction, for example, to predict the
 # salary of an employee with 12 years of experience?
@@ -56,6 +56,8 @@ print(regressor.predict([[12]]))
 # [12]   -> 1D Array
 # [[12]] -> 2D Array
 
+# ----------------------------------------------------------------------------------------------------------------------
+
 # Question 2: How do I get the final regression equation y = b0 + b1 x with the final values of the
 # coefficients b0 and b1?
 
@@ -69,3 +71,5 @@ print(regressor.intercept_)
 
 # Important Note: To get these coefficients we called the "coef_" and "intercept_" attributes from our regressor object.
 # Attributes in Python are different than methods and usually return a simple value or an array of values.
+
+# ----------------------------------------------------------------------------------------------------------------------

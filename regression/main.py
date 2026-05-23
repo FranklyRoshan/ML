@@ -3,7 +3,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
-# =============================================== DATA PREPROCESSING ===============================================
+# ================================================ DATA PREPROCESSING ==================================================
+
 # Importing the dataset (df - DataFrame)
 df = pd.read_csv('Data.csv')
 #  slice operator [start:stop:step]
